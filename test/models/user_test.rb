@@ -36,4 +36,15 @@ class UserTest < ActiveSupport::TestCase
     @user.emp_number = 1
     assert @user.valid?
   end
+
+  test "job_type should be one of specified enums" do
+    @user.job_type = :general
+    assert @user.valid?
+
+    @user.job_type = 100
+    assert @user.valid?
+
+    assert_raise {@user.job_type = 101}
+    assert_raise {@user.job_type = :unknown}
+  end
 end
