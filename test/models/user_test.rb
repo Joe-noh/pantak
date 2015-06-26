@@ -6,7 +6,6 @@ class UserTest < ActiveSupport::TestCase
       full_name: "ほんざわ じょう",
       nick_name: "じょう",
       job_type: 300,
-      emp_number: 100,
       self_introduction: "こんにちわ",
       password: "password",
       password_confirmation: "password"
@@ -31,19 +30,6 @@ class UserTest < ActiveSupport::TestCase
   test "job_type shoud be present" do
     @user.job_type = nil
     assert_not @user.valid?
-  end
-
-  test "emp_number shoud be present" do
-    @user.emp_number = "  "
-    assert_not @user.valid?
-  end
-
-  test "emp_number should be greater than 0" do
-    @user.emp_number = 0
-    assert_not @user.valid?
-
-    @user.emp_number = 1
-    assert @user.valid?
   end
 
   test "job_type should be one of specified enums" do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626070750) do
+ActiveRecord::Schema.define(version: 20150626074153) do
 
   create_table "diaries", force: :cascade do |t|
     t.integer  "user_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150626070750) do
     t.string   "full_name"
     t.string   "nick_name"
     t.integer  "job_type"
-    t.integer  "emp_number"
     t.text     "self_introduction"
     t.string   "icon"
     t.boolean  "admin",             default: false
