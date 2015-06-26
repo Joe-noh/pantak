@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :diaries
 
+  mount_uploader :icon, IconUploader
+
   enum job_type: {
     general:  100,
     designer: 200,
