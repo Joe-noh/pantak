@@ -29,7 +29,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "emp_nunmber should be greater than 0" do
+  test "emp_number should be greater than 0" do
     @user.emp_number = 0
     assert_not @user.valid?
 
