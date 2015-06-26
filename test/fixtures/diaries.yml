@@ -1,0 +1,9 @@
+today:
+  user: joe
+  title: 今日の日報
+  content: いやー疲れた
+
+yesterday:
+  user: joe
+  title: 昨日の日報
+  content: いやはや疲れた
