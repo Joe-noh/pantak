@@ -1,0 +1,28 @@
+<div class="row">
+  <h1>いらっしゃいまし</h1>
+</div>
+
+<%= form_for(@user) do |f| %>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= label_tag "user[family_name]", "苗字" %>
+      <%= text_field_tag "user[family_name]" %>
+    </div>
+    <div class="large-6 columns">
+      <%= label_tag "user[first_name]", "名前" %>
+      <%= text_field_tag "user[first_name]" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :nick_name, "あだ名"%>
+      <%= f.text_field :nick_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :job_type, "職種"%>
+      <%= f.select :job_type, User.job_types_dict.invert %>
+    </div>
+  </div>
+<% end %>
