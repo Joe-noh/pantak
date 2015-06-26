@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>おかえりなさいまし</h1>
+  </div>
+</div>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= render "shared/flash" %>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :nick_name, "あだ名"%>
+      <%= f.text_field :nick_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :password, "パスワード"%>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "出勤", class: "button" %>
+    </div>
+  </div>
+<% end %>
