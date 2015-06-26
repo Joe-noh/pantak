@@ -5,6 +5,7 @@ joe:
   emp_number: 100
   self_introduction: こんにちわ
   icon: hogehoge
+  password_digest: <%= "a"*50 %>
   admin: false
 
 admin:
@@ -14,4 +15,5 @@ admin:
   emp_number: 2
   self_introduction:
   icon: fugafuga
+  password_digest: <%= "b"*50 %>
   admin: true

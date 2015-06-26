@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :diaries
 
+  has_secure_password
+
   mount_uploader :icon, IconUploader
 
   enum job_type: {
@@ -13,6 +15,7 @@ class User < ActiveRecord::Base
   validates :nick_name,  presence: true
   validates :job_type,   presence: true
   validates :emp_number, presence: true, numericality: {greater_than: 0}
+  validates :password,   presence: true, length: {minimum: 8}
 
   def self.job_types_dict
     {

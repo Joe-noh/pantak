@@ -2,7 +2,16 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:joe)
+    user_params = {
+      full_name: "ほんざわ じょう",
+      nick_name: "じょう",
+      job_type: 300,
+      emp_number: 100,
+      self_introduction: "こんにちわ",
+      password: "password",
+      password_confirmation: "password"
+    }
+    @user = User.new user_params
   end
 
   test "should be valid" do
