@@ -1,0 +1,17 @@
+joe:
+  full_name: ほんざわ じょう
+  nick_name: じょう
+  job_type: 300
+  emp_number: 100
+  self_introduction: こんにちわ
+  icon: hogehoge
+  admin: false
+
+admin:
+  full_name: 管理 する太郎
+  nick_name: カンちゃん
+  job_type: 100
+  emp_number: 2
+  self_introduction:
+  icon: fugafuga
+  admin: true
