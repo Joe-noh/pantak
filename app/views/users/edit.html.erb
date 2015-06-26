@@ -21,4 +21,22 @@
       <%= f.select :job_type, User.job_types_dict.invert %>
     </div>
   </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :emp_number, "社員番号"%>
+      <%= f.number_field :emp_number, disabled: true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :self_introduction, "自己紹介"%>
+      <%= f.text_area :self_introduction, rows: 10 %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :icon, "お顔"%>
+      <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png" %>
+    </div>
+  </div>
 <% end %>
