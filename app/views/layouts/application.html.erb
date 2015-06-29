@@ -22,19 +22,21 @@
       </ul>
 
       <section class="top-bar-section">
-        <ul class="left">
-          <li><a href="#">日記</a></li>
-        </ul>
+        <% if logged_in? %>
+          <ul class="left">
+            <li><a href="#">日記</a></li>
+          </ul>
 
-        <ul class="right">
-          <li class="has-dropdown">
-            <a href="#">Right Button Dropdown</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-              <li><a href="#">Active link in dropdown</a></li>
-            </ul>
-          </li>
-        </ul>
+          <ul class="right">
+            <li class="has-dropdown">
+              <a href="#">Right Button Dropdown</a>
+              <ul class="dropdown">
+                <li><a href="#">First link in dropdown</a></li>
+                <li><a href="#">Active link in dropdown</a></li>
+              </ul>
+            </li>
+          </ul>
+        <% end %>
       </section>
     </nav>
 
