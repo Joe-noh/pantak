@@ -23,8 +23,8 @@
   </div>
   <div class="row">
     <div class="large-12 columns">
-      <%= f.label :emp_number, "社員番号"%>
-      <%= f.number_field :emp_number, disabled: true %>
+      <%= f.label :id, "社員番号"%>
+      <%= f.number_field :id, disabled: true %>
     </div>
   </div>
   <div class="row">
@@ -37,6 +37,12 @@
     <div class="large-12 columns">
       <%= f.label :icon, "お顔"%>
       <%= f.file_field :icon, accept: "image/jpeg,image/gif,image/png" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "変更", class: "button" %>
     </div>
   </div>
 <% end %>
