@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626032644) do
+ActiveRecord::Schema.define(version: 20150626074153) do
 
   create_table "diaries", force: :cascade do |t|
     t.integer  "user_id"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20150626032644) do
     t.string   "full_name"
     t.string   "nick_name"
     t.integer  "job_type"
-    t.integer  "emp_number"
     t.text     "self_introduction"
     t.string   "icon"
     t.boolean  "admin",             default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.string   "password_digest"
   end
 
   add_index "users", ["full_name", "nick_name"], name: "index_users_on_full_name_and_nick_name", unique: true

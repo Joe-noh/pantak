@@ -1,0 +1,9 @@
+<% flash.each do |type, message| %>
+  <div class="row">
+    <div class="large-12 columns large-centered">
+      <div class="alert-box <%= type %>">
+        <%= message %>
+      </div>
+    </div>
+  </div>
+<% end %>

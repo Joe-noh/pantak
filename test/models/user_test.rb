@@ -2,7 +2,15 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = users(:joe)
+    user_params = {
+      full_name: "ほんざわ じょう",
+      nick_name: "じょう",
+      job_type: 300,
+      self_introduction: "こんにちわ",
+      password: "password",
+      password_confirmation: "password"
+    }
+    @user = User.new user_params
   end
 
   test "should be valid" do
@@ -22,19 +30,6 @@ class UserTest < ActiveSupport::TestCase
   test "job_type shoud be present" do
     @user.job_type = nil
     assert_not @user.valid?
-  end
-
-  test "emp_number shoud be present" do
-    @user.emp_number = "  "
-    assert_not @user.valid?
-  end
-
-  test "emp_number should be greater than 0" do
-    @user.emp_number = 0
-    assert_not @user.valid?
-
-    @user.emp_number = 1
-    assert @user.valid?
   end
 
   test "job_type should be one of specified enums" do

@@ -1,0 +1,30 @@
+<div class="row">
+  <h1><%= @user.nick_name %> さん</h1>
+</div>
+<div class="row">
+  <div class="large-12 large-centered columns">
+    <%= image_tag @user.icon, size: [256, 256]%>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      <b><%= @user.full_name %></b> (<b><%= @user.nick_name %></b>)さんは、
+      社員番号<b><%= @user.id %></b>番の
+      <b><%= User.job_types_dict[@user.job_type.to_sym] %></b>さんです。
+    </p>
+  </div>
+  <div class="large-12 columns">
+    <p>
+      <%= @user.nick_name %>さんからひとこと:
+      <div class="panel">
+        <%= @user.self_introduction %>
+      </div>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <%= link_to "いじる", edit_user_path(@user), class: "button" %>
+  </div>
+</div>

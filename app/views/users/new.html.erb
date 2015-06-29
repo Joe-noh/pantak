@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>いらっしゃいまし</h1>
+  </div>
+</div>
+
+<%= form_for(@user) do |f| %>
+  <%= render "shared/errors", object: f.object %>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :full_name, "お名前"%>
+      <%= f.text_field :full_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :nick_name, "あだ名"%>
+      <%= f.text_field :nick_name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :job_type, "職種"%>
+      <%= f.select :job_type, User.job_types_dict.invert %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :password, "パスワード"%>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :password_confirmation, "パスワード(もういっかい)"%>
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "入社", class: "button" %>
+    </div>
+  </div>
+<% end %>
