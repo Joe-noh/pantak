@@ -15,8 +15,8 @@ class ActiveSupport::TestCase
 
     if integration_test?
       session_params = {
-        email:       user.email,
-        password:    password
+        nick_name: user.nick_name,
+        password:  password
       }
       post login_path, session: session_params
     else

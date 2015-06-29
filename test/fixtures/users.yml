@@ -4,7 +4,7 @@ joe:
   job_type: 300
   self_introduction: こんにちわ
   icon: hogehoge
-  password_digest: <%= "a"*50 %>
+  password_digest: <%= User.digest("password") %>
   admin: false
 
 admin:
