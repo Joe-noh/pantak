@@ -3,6 +3,8 @@
 </div>
 
 <%= form_for(@user) do |f| %>
+  <%= render "shared/errors", object: f.object %>
+
   <div class="row">
     <div class="large-12 columns">
       <%= f.label :full_name, "名前" %>
