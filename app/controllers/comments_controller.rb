@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_url }
-      format.js { @comment.save }
+      format.js { render @comment if @comment.save }
     end
   end
 
