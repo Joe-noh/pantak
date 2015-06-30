@@ -24,7 +24,7 @@
       <section class="top-bar-section">
         <% if logged_in? %>
           <ul class="left">
-            <li><a href="#">日記</a></li>
+            <li><%= link_to "日記", user_diaries_path(current_user) %></li>
           </ul>
 
           <ul class="right">
