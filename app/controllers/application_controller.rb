@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+  def index
+    redirect_to login_user unless logged_in?
+  end
+
   private
 
   def logged_in_user
