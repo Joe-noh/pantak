@@ -1,0 +1,5 @@
+var comments = $("#diary-<%= @comment.diary_id %>-comments");
+comments.append("<%= escape_javascript(render @comment)%>");
+
+var comment_textarea = $("#diary-<%= @comment.diary_id %>-comment-form textarea");
+comment_textarea.val("");
