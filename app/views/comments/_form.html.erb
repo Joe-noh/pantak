@@ -1,0 +1,20 @@
+<%= form_for(:comment,
+             remote: true,
+             url: user_diary_comments_path(diary.user, diary),
+             html: {id: "diary-#{diary.id}-comment-form"}) do |f| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.label :content, "コメントする" %>
+      <%= f.text_area :content %>
+    </div>
+  </div>
+
+  <%= hidden_field_tag "comment[diary_id]", diary.id %>
+  <%= hidden_field_tag "comment[user_id]",  current_user.id %>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "わいわい", class: "button tiny" %>
+    </div>
+  </div>
+<% end %>

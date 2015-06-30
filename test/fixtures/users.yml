@@ -7,6 +7,15 @@ joe:
   password_digest: <%= User.digest("password") %>
   admin: false
 
+hon:
+  full_name: ほんざわ のぼる
+  nick_name: のぼる
+  job_type: 200
+  self_introduction: こんばんは
+  icon: fugafuga
+  password_digest: <%= User.digest("password") %>
+  admin: false
+
 admin:
   full_name: 管理 する太郎
   nick_name: カンちゃん
