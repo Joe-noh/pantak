@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :diaries, on: :member do
-      resources :comments, on: :member
+      resources :comments, only: [:create], on: :member
     end
   end
 
