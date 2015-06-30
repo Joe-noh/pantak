@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'foundation-rails'
 
+gem 'redcarpet'
+
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
