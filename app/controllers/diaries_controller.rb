@@ -21,7 +21,7 @@ class DiariesController < ApplicationController
     @diary = current_user.diaries.build(diary_params)
 
     if @diary.save
-      redirect_to @diary
+      redirect_to user_diary_url(user_id: current_user.id, id: @diary.id)
     else
       render "new"
     end
@@ -32,7 +32,7 @@ class DiariesController < ApplicationController
 
   def update
     if @diary.update_attributes(diary_params)
-      redirect_to @diary
+      redirect_to user_diary_url(user_id: current_user.id, id: @diary.id)
     else
       render "edit"
     end
