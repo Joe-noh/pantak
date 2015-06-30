@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1>新しい日記</h1>
+  </div>
+</div>
+
+<%= form_for(@diary, url: user_diaries_path(current_user)) do |f| %>
+  <%= render "shared/errors", object: f.object %>
+  <%= render "fields", f: f %>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <%= f.submit "保存", class: "button" %>
+    </div>
+  </div>
+<% end %>

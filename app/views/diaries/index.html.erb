@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h1><%= @user.nick_name %>さんの日記</h1>
+  </div>
+</div>
+
+<% @diaries.each do |diary| %>
+  <%= render diary %>
+  <div class="row">
+    <div class="large-12 columns">
+      <hr>
+    </div>
+  </div>
+<% end %>
