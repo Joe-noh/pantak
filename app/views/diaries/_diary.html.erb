@@ -1,7 +1,7 @@
 <div class="diary">
   <div class="row">
     <div class="large-9 columns">
-      <h2><%= diary.title %></h2>
+      <h2><b><%= diary.title %></b></h2>
     </div>
     <div class="large-3 columns">
       <span><%= diary.created_at %></span>
@@ -10,7 +10,12 @@
 
   <div class="row">
     <div class="large-12 columns">
-      <%= diary.content %>
+      <% if diary.title.ends_with?(".md") %>
+        <% renderer = Redcarpet::Render::HTML.new(escape_html: true, prettify: true) %>
+        <%= Redcarpet::Markdown.new(renderer).render(diary.content).html_safe %>
+      <% else %>
+        <%= simple_format diary.content %>
+      <% end %>
     </div>
   </div>
 

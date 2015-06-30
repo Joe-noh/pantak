@@ -10,7 +10,7 @@
       <%= image_tag comment.user.icon %>
     </div>
     <div class="large-8 columns">
-      <%= comment.content %>
+      <%= simple_format comment.content %>
     </div>
     <div class="large-2 columns">
       <%= comment.created_at %>
