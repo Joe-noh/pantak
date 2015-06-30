@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index
-    redirect_to login_user unless logged_in?
+    redirect_to login_path unless logged_in?
   end
 
   private
