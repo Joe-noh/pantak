@@ -1,4 +1,4 @@
-<%= form_for(diary.comments.build,
+<%= form_for(:comment,
              remote: true,
              url: user_diary_comments_path(diary.user, diary),
              html: {id: "diary-#{diary.id}-comment-form"}) do |f| %>
