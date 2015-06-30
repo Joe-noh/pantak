@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   def authenticated?(type, token)
     digest = self.send("#{type}_digest")
     return false if digest.nil?
-    BCrypt::Password.new(digest.is_password? token)
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def remember
